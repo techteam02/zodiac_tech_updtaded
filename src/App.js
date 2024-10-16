@@ -388,7 +388,7 @@ padding:0 !important;
 .tech-carousel{
 max-width:90%}
   .tech-logo {
-    max-width: 40px;
+    max-width: 80px;
   }
 }
 
@@ -464,21 +464,23 @@ max-width:90%}
 }
 
 .client_carousel_title {
-  font-size: 2rem; /* Title size */
+  font-size: 3rem; /* Title size */
   margin-bottom: 50px; /* Space below title */
   color:var(--primary-color);
 }
 
 .client_carousel {
+
   margin: 0 auto; /* Center the carousel */
-  width: 90%; /* Carousel width */
+  width: 100%; /* Carousel width */
 }
 
 .client_logo {
-  max-width: 120px; /* Limit logo width */
+  max-width: 200px; /* Limit logo width */
   height: auto; /* Maintain aspect ratio */
-  display: block; /* Make logos block elements for centering */
+  display: block; 
   margin: auto; /* Center the logos horizontally */
+  
 }
 
 /* Centering SwiperSlide */
@@ -486,16 +488,17 @@ max-width:90%}
   display: flex; /* Use flexbox for vertical centering */
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
-  height: 100px; /* Set a height to the slide for vertical centering */
+  height: auto; 
 }
 
 /* Mobile View */
 @media (max-width: 768px) {
   .client_logo {
-    max-width: 50px; 
-    margin-right:30px;
+    max-width: 120px; 
   }
 }
+
+
 
 
 
@@ -1701,13 +1704,32 @@ const HomePage = () => (
       {/* Infinite carousel of technology logos */}
       <h3 className="tech-carousel-title">Technologies We Use</h3>
       <Swiper
-        spaceBetween={20}
-        slidesPerView={5}
-        loop={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        modules={[Autoplay]}
-        className="tech-carousel"
-      >
+  spaceBetween={20}
+  slidesPerView={5} // Default for larger screens
+  loop={true}
+  autoplay={{ delay: 2500, disableOnInteraction: false }}
+  modules={[Autoplay]}
+  breakpoints={{
+    320: { // For mobile screens (320px and above)
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    768: { // For tablets (768px and above)
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+    1024: { // For desktops (1024px and above)
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1440: { // For larger desktops (1440px and above)
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+  }}
+  className="tech-carousel"
+>
+
         <SwiperSlide><img src="/images/nodejs.png" alt="Node.js" className="tech-logo" /></SwiperSlide>
         <SwiperSlide><img src="/images/react.png" alt="React.js" className="tech-logo" /></SwiperSlide>
         <SwiperSlide><img src="/images/html.png" alt="HTML" className="tech-logo" /></SwiperSlide>
@@ -1751,13 +1773,28 @@ const HomePage = () => (
 >
   <h3 className="client_carousel_title">Our Clients</h3>
   <Swiper
-    spaceBetween={20}
-    slidesPerView={5}
-    loop={true}
-    autoplay={{ delay: 2500, disableOnInteraction: false }}
-    modules={[Autoplay]}
-    className="client_carousel"
-  >
+  spaceBetween={20}
+  slidesPerView={4} // Default for larger screens
+  loop={true}
+  autoplay={{ delay: 2500, disableOnInteraction: false }}
+  modules={[Autoplay]}
+  breakpoints={{
+    320: { // For mobile screens (320px and above)
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    768: { // For tablets (768px and above)
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+    1024: { // For desktops (1024px and above)
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  }}
+  className="client_carousel"
+>
+
     <SwiperSlide><img src="/images/Picture1.png" alt="Client 1" className="client_logo" /></SwiperSlide>
     <SwiperSlide><img src="/images/Picture2.png" alt="Client 2" className="client_logo" /></SwiperSlide>
     <SwiperSlide><img src="/images/Picture5.png" alt="Client 3" className="client_logo" /></SwiperSlide>
