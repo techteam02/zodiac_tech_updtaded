@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence,} from 'framer-motion';
 import { FaBars } from 'react-icons/fa';
-import { Globe, Mail, Phone, Code, Palette, Calendar, Users, Award, Target, Zap,Mic, Film, Video, Smartphone, Megaphone,MapPin, Send, Linkedin, Twitter, Facebook ,Briefcase } from 'lucide-react';
+import { Globe, Mail, Phone, Code, Palette, Calendar, Users, Award, Target, Zap, Mic, Film, Video, Smartphone, Megaphone, MapPin, Send, Linkedin, Twitter, Facebook, Briefcase } from 'lucide-react';
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -682,6 +683,8 @@ max-width:90%}
   margin-bottom: 3rem;
 }
 
+
+
 /* Timeline Section */
 .timeline {
   position: relative;
@@ -754,25 +757,27 @@ margin:60px 0;
 }
 
 .timeline-item:nth-child(even)::after {
-  left: -13%px;
+  left: -13%;
   right: auto;
 }
 
 .timeline-date {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .timeline-title {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.25rem;
+  color: var(--primary-color);
 }
 
 .timeline-description {
   font-size: 0.9rem;
   line-height: 1.4;
+  color:black;
 }
 
 /* Feature Cards Section */
@@ -792,7 +797,7 @@ margin-top:40px;
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
-  width: calc(25% - 2rem); /* Set width of each card */
+  width: calc(34% - 2rem); /* Set width of each card */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
@@ -987,161 +992,196 @@ flex-direction: column-reverse;
 }
 
 
+
 .contact-page {
-    background: #ffffff; /* White background */
-    color: #333333; /* Dark text color for readability */
-    padding: 4rem 2rem;
-    min-height: 100vh;
+  /* background: linear-gradient(135deg, #1a1a1a, #2a2a2a); */
+  color: black;
+  padding: 4rem 6rem;
+  min-height: 100vh;
 }
 
 .contact-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    gap: 4rem; /* Space between columns */
+  // max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* To ensure responsiveness */
 }
 
 .contact-header {
-    grid-column: 1 / -1; /* Full width for header */
-    text-align: center;
-    margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .contact-title {
-    font-size: 3rem; /* Large title */
-    color: var(--primary-color); /* Use primary color */
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .contact-subtitle {
-    font-size: 1.5rem; /* Subtitle styling */
-    color: #555555; /* Slightly lighter color for subtitle */
+  font-size: 1.5rem;
+  color: #b0b0b0;
 }
 
+.contact-form,
+.contact-info {
+  flex: 1; /* Flex 1 ensures that both the form and info sections take equal space */
+  max-width: 50%;
+}
+
+.info-item span{
+font-size:1.5rem !important;}
+
+
 .contact-form {
-    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width:600px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
-    margin-bottom: 1.5rem; /* Space between form groups */
+  margin-bottom: 1.5rem;
 }
 
 .form-label {
-    display: block; /* Block display for labels */
-    margin-bottom: 0.5rem; /* Space below labels */
-    color: var(--primary-color); /* Primary color for labels */
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size:1.3rem;
 }
 
 .form-input,
 .form-textarea {
-    width: 95% !important; /* Full width inputs */
-    padding: 0.75rem; /* Padding for inputs */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
-    background: rgba(255, 255, 255, 0.8); /* Slightly opaque input background */
-    color: #333333; /* Dark text color */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Base font size */
-    transition: border-color 0.3s ease; /* Transition for border color */
-    border:1px solid black !important; 
+  width: 95%;
+  padding: 0.9rem;
+  border: 2px solid #c0c0c0 !important;
+  background: rgba(255, 255, 255, 0.05);
+  color: black;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-.form-input:focus,
-.form-textarea:focus {
-    border-color: var(--primary-color); /* Change border color on focus */
-    outline: none; /* Remove default outline */
+.info-item span{
+font-size:1.3rem;}
+
+.form-input,{
+border:1px solid black;
 }
 
 .form-textarea {
-    min-height: 150px; /* Minimum height for textarea */
-    resize: vertical; /* Allow vertical resize */
+  min-height: 150px;
+  resize: vertical;
 }
 
 .submit-button {
-    background-color: var(--primary-color); /* Button color */
-    color: white; /* White text */
-    padding: 0.75rem 1.5rem; /* Button padding */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Button font size */
-    cursor: pointer; /* Pointer on hover */
-    transition: background-color 0.3s ease; /* Transition effect */
-    display: flex; /* Flex display for icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit-button:hover {
-    background-color: var(--secondary-color); /* Change color on hover */
+  background-color: var(--secondary-color);
 }
 
 .submit-button svg {
-    margin-left: 0.5rem; /* Space between text and icon */
+  margin-left: 0.5rem;
 }
 
 .contact-info {
-    display: flex; /* Flex layout for contact info */
-    flex-direction: column; /* Column layout */
-    justify-content: flex-start; /* Start aligning items */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top:3rem;
 }
 
 .info-item {
-    display: flex; /* Flex layout for each info item */
-    align-items: center; /* Center vertically */
-    margin-bottom: 1rem; /* Space below each item */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .info-item svg {
-    margin-right: 1rem; /* Space between icon and text */
-    color: var(--primary-color); /* Primary color for icons */
+  margin-right: 1rem;
+  color: var(--primary-color);
 }
 
 .location-link {
-    color: var(--primary-color); /* Primary color for location link */
-    text-decoration: underline; /* Underline link */
-    cursor: pointer; /* Pointer on hover */
-    transition: color 0.3s ease; /* Transition for color change */
+  color: var(--primary-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .location-link:hover {
-    color: var(--secondary-color); /* Change color on hover */
+  color: var(--secondary-color);
 }
 
 .social-links {
-    display: flex; /* Flex layout for social links */
-    justify-content: flex-start; /* Start aligning items */
-    margin-top: 2rem; /* Space above social links */
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-left:2rem;
 }
 
 .social-link {
-    color: var(--primary-color); /* Primary color for social links */
-    margin-right: 1rem; /* Space between social links */
-    transition: color 0.3s ease; /* Transition for color change */
+  color: var(--primary-color);
+  margin-right: 1rem;
+  transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: var(--secondary-color); /* Change color on hover */
+  color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
-    .contact-content {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
-    .contact-title {
-        font-size: 2.5rem; /* Smaller title on mobile */
-    }
-    .contact-subtitle {
-        font-size: 1.2rem; /* Smaller subtitle on mobile */
-    }
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-page{
+  padding: 4rem 0;}
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 100%; /* Take full width in smaller screens */
+  }
+
+  .contact-form{
+  min-width:250px !important;}
+  }
+
+  .contact-info{
+  align-items:center;
+  padding:0 30px;
+  }
 }
 
 
-.services-grid {
+.services_grid {
   display: flex !important;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   justify-content: space-around;
   gap: 2rem;
   padding: 2rem;
@@ -1164,7 +1204,7 @@ flex-direction: column-reverse;
   flex-direction: column;
   justify-content: space-between;
   height: 65%;
-  margin: 1rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
   max-height: 500px;
 }
 
@@ -1195,6 +1235,8 @@ flex-direction: column-reverse;
   margin-bottom: 1rem;
   position: relative;
   z-index: 2;
+  margin-top:3.5rem;
+  color: black;
 }
 
 .service-description {
@@ -1226,6 +1268,10 @@ margin-bottom: 2.5rem !important;
 margin-top:100px}
 
 @media (max-width: 768px) {
+
+.services_grid{
+margin-bottom:100px;
+}
   .services-title {
     font-size: 2.5rem;
   }
@@ -1234,6 +1280,14 @@ margin-top:100px}
   }
   .service-card {
     padding: 1.5rem;
+    height:65%;
+    margin-top:5rem;
+  }
+
+  .service-icon {
+    width:30px;
+    height:30px;
+    padding:1.6rem;
   }
 
   .service_img {
@@ -1242,147 +1296,7 @@ margin-top:100px}
 }
 
 
-  .contact-page {
-    // background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    color: black;
-    padding: 4rem 2rem;
-    min-height: 100vh;
-  }
 
-  .contact-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .contact-header {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .contact-title {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-
-  .contact-subtitle {
-    font-size: 1.5rem;
-    color: #b0b0b0;
-  }
-
-  .contact-form {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-  }
-
-  .form-input,
-  .form-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    color: black;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  .form-textarea {
-    min-height: 150px;
-    resize: vertical;
-  }
-
-  .submit-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .submit-button:hover {
-    background-color: var(--secondary-color);
-  }
-
-  .submit-button svg {
-    margin-left: 0.5rem;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .info-item svg {
-    margin-right: 1rem;
-    color: var(--primary-color);
-  }
-
-  .location-link {
-    color: var(--primary-color);
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-
-  .location-link:hover {
-    color: var(--secondary-color);
-  }
-
-  .social-links {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 2rem;
-  }
-
-  .social-link {
-    color: var(--primary-color);
-    margin-right: 1rem;
-    transition: color 0.3s ease;
-  }
-
-  .social-link:hover {
-    color: var(--secondary-color);
-  }
-
-  @media (max-width: 768px) {
-    .contact-content {
-      grid-template-columns: 1fr;
-    }
-    .contact-title {
-      font-size: 2.5rem;
-    }
-    .contact-subtitle {
-      font-size: 1.2rem;
-    }
-  }
 
 
 .portfolio-page {
@@ -1480,7 +1394,7 @@ display: flex;
 .scroll-indicator {
     position: absolute; /* Position it absolutely within the content area */
     bottom: 0.1rem; 
-    left: 50%; /* Center horizontally */
+    left: 45%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to truly center it */
     font-size: 1rem; /* Font size */
     color: var(--primary-color); /* Color of text */
@@ -1500,6 +1414,31 @@ display: flex;
 }
 
 @media (max-width: 768px) {
+
+.scroll-indicator{
+left:45%
+}
+
+.main_portfolio{
+flex-direction: column;
+}
+
+.portfolio-image{
+width:100%;
+margin-top:12rem;
+}
+
+.portfolio-image img{
+width: 100%;
+}
+
+.portfolio-content{
+  padding: 0;
+}
+
+.portfolio-content{
+padding:0
+}
     .portfolio-title {
         font-size: 2.5rem;
     }
@@ -1514,6 +1453,83 @@ display: flex;
     }
 }
 
+.contact_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  color:black !important;
+}
+
+.contact_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.contact_text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.contact_heading {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contact_description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.contact_button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact_button:hover {
+  background-color: var(--secondary-color);
+}
+
+.contact_image_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contact_image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contact_image img{
+max-width:90%}
+
+@media (max-width: 768px) {
+  .contact_content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact_text {
+    padding-right: 0;
+  }
+
+  .contact_image_container {
+    margin-bottom: 2rem;
+  }
+}
 
 `;
 
@@ -1910,6 +1926,37 @@ const ServiceCard = ({ icon: Icon, title, description }) => (
 const ServicesPage = () => {
   const services = [
     {
+      icon: Code,
+      title: "Software Development",
+      description: "It is the process of designing, creating, testing, and maintaining computer programs and applications."
+    },
+    {
+      icon: Globe,
+      title: "Website Development",
+      description: "It includes creating, maintaining the website which enhances user experience...."
+    },
+    {
+      icon: Megaphone,
+      title: "Digital Marketing",
+      description: "Digital marketing uses online platforms to attract and retain customers through targeted campaigns."
+    },
+    {
+      icon: Target,
+      title: "SEO (Search Engine Optimization)",
+      description: "SEO, or search engine optimization, is the process of improving website visibility on search engines."
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile App Creation",
+      description: "Develop cutting-edge mobile applications for iOS and Android platforms."
+    },
+    {
+      icon: Megaphone,
+      title: "Windows App Development",
+      description: "Web app development builds applications accessible through web browsers, focusing on performance and user experience."
+    },
+    
+    {
       icon: Mic,
       title: "Podcast Production",
       description: "Create engaging audio content with our professional podcast production services."
@@ -1924,11 +1971,7 @@ const ServicesPage = () => {
       title: "Livestream Services",
       description: "Connect with your audience in real-time through high-quality livestreaming."
     },
-    {
-      icon: Smartphone,
-      title: "Mobile App Creation",
-      description: "Develop cutting-edge mobile applications for iOS and Android platforms."
-    },
+ 
     {
       icon: Globe,
       title: "Web Development",
@@ -1943,12 +1986,13 @@ const ServicesPage = () => {
       icon: Palette,
       title: "UI/UX Design",
       description: "Create intuitive and visually appealing user interfaces for seamless user experiences."
-    }
+    },
+   
   ];
 
   return (
     <div className="page services-page">
-      <div className="services-content">
+      <div className="services-content ">
         <motion.div 
           className="services-header"
           initial={{ opacity: 0, y: -50 }}
@@ -1960,11 +2004,12 @@ const ServicesPage = () => {
         </motion.div>
 
         <motion.div 
-          className="services-grid"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+  className='services_grid'
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }} // Apply flex here
+>
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -1979,7 +2024,7 @@ const ServicesPage = () => {
       </div>
     </div>
   );
-}; // Ensure you import your icons correctly
+}; 
 
 const portfolioData = [
   {
@@ -2157,6 +2202,7 @@ const ContactPage = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className='contact_cont'
         >
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -2215,7 +2261,7 @@ const ContactPage = () => {
             <span>+1 (234) 567-890</span>
           </div>
           <div className="info-item">
-            <MapPin size={24} />
+            <MapPin size={40} />
             <span className="location-link" onClick={openInMaps}>
               Jai Bhavan, Samadhi Ward, Pathanpura Road, Chandrapur
             </span>
@@ -2223,13 +2269,13 @@ const ContactPage = () => {
 
           <div className="social-links">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <Linkedin size={24} />
+              <Linkedin size={35} />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <Twitter size={24} />
+              <Twitter size={35} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <Facebook size={24} />
+              <Facebook size={35} />
             </a>
           </div>
         </motion.div>
