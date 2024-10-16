@@ -302,6 +302,7 @@ const styles = `
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    padding:0 !important;
   }
 
  .feature-card {
@@ -379,6 +380,10 @@ const styles = `
 }
 
 @media (max-width: 768px) {
+
+.features-grid{
+padding:0 !important;
+}
 
 .tech-carousel{
 max-width:90%}
